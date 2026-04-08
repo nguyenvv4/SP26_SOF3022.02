@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table>
+    <thead>
+    <tr>
+        <td>id</td>
+        <td>email</td>
+        <td>password</td>
+        <td>full name</td>
+        <td>phone</td>
+        <td>role</td>
+        <td>active</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${listUser}">
+<!--        <td th:text="${user.getId()}"></td> -->
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.password}"></td>
+        <td th:text="${user.fullName}"></td>
+        <td th:text="${user.phone}"></td>
+        <td th:text="${user.role}"></td>
+        <td th:text="${user.active}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
