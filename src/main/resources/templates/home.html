@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/add" method="post">
+    name <input type="text" name="name"> <br>
+    price <input type="text" name="price"> <br>
+    description <input type="text" name="description"> <br>
+    image <input type="text" name="image"> <br>
+    active <input type="radio" name="active" value="true"> Hoat dong
+    <input type="radio" name="active" value="false"> Khong hoat dong
+    <br>
+
+    <select th:name="category">
+        <option th:each="category: ${listCategory}"
+                th:value="${category.id}"
+                th:text="${category.name}"
+        ></option>
+    </select> <br>
+    <button type="submit">Add</button>
+</form>
+
+<table>
+    <thead>
+    <tr>
+        <td>id</td>
+        <td>name</td>
+        <td>price</td>
+        <td>description</td>
+        <td>active</td>
+        <td>image</td>
+        <td>Category</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="drink : ${listDrink}">
+        <td th:text="${drink.id}"></td>
+        <td th:text="${drink.name}"></td>
+        <td th:text="${drink.price}"></td>
+        <td th:text="${drink.description}"></td>
+        <td th:text="${drink.active}"></td>
+        <td th:text="${drink.image}"></td>
+        <td th:text="${drink.category.name}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
